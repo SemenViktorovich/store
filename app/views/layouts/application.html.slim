@@ -1,0 +1,17 @@
+DOCTYPE
+html
+  head
+    title StoreBooks
+      #csrf_meta_tags
+      /.-csp_meta_tag
+      /.comments-meta name="keywords" content="template language"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  body
+    nav
+      ul
+        li = link_to 'Books', root_path
+        li = link_to 'New book', new_book_path
+  main
+    = yield

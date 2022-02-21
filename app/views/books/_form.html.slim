@@ -1,0 +1,20 @@
+= form_with model: @book do |f|
+
+  .mb-3.row
+    .col-sm-2.col-form-label
+      = f.label :name
+    .col-sm-10
+      = f.text_field :name, class: 'form-control'
+
+    .mb-3.row
+      .col-sm-2.col-form-label
+        = f.label :author
+      .col-sm-10
+        = f.text_field :author, class: 'form-control'
+
+    .mb-3.row
+      .col-sm-2.col-form-label
+        = f.label :date
+	  .col-sm-10
+        = f.text_field :date, class: 'form-control'
+    = f.submit 'Save', class: 'btn btn-primary'
