@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li> <%= link_to 'Books', root_path %> </li>
+        <li> <%= link_to 'New book', new_book_path %> </li>
+      </ul>
+    </nav>
+  </body>
+
+  <main>
+    <%= yield %>
+  </main>
+  
+</html>

@@ -1,0 +1,16 @@
+ <h1> BooksStore </h1>
+ <p> Welcome </p>
+
+ <% @books.each do |book|  %>
+
+	<h2> <%= book.name %> </h2>
+	<p> <%= book.author %> </p>
+	<p> <%= book.date %> </p>
+
+    <%= link_to "Show", book_path(book), class: 'btn btn-primary' %>
+    <%= link_to "Edit", edit_book_path(book), class: 'btn btn-primary' %>
+	<%= link_to "Delete", book_path(book), class: 'btn btn-danger', method: :delete %> 
+ <% end %>
+<footer></br>
+	&copy @viktorych_blyat <%= Time.now.year %>
+</footer>
