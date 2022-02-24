@@ -1,0 +1,8 @@
+li = link_to 'Books', root_path, class: 'btn btn-warning '
+li = link_to 'New book', new_book_path, class: 'btn btn-warning'
+- if user_signed_in?
+  li = link_to 'Out', destroy_user_session_path, method: :delete, class: 'btn btn-info'
+  li = link_to 'Edit account', edit_user_registration_path, class: 'btn btn-info'
+- else
+  li = link_to 'Log in', new_user_session_path, class: "btn btn-info"
+  li = link_to 'Sign up',  new_user_registration_path, class: "btn btn-info"
