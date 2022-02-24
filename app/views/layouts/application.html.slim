@@ -2,9 +2,8 @@ DOCTYPE
 html
   head
     title StoreBooks
-      #csrf_meta_tags
-      /.-csp_meta_tag
-      /.comments-meta name="keywords" content="template language"
+    = csrf_meta_tags
+    = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
@@ -13,5 +12,13 @@ html
       ul
         li = link_to 'Books', root_path
         li = link_to 'New book', new_book_path
+        -if user_signed_in?
+          li = link_to 'Out', destroy_user_session_path, method: :delete
+          li = link_to 'Edit account', edit_user_registration_path
+        -else
+          li = link_to 'Log in', new_user_session_path
+          li = link_to 'Sign up',  new_user_registration_path
+
+
   main
     = yield

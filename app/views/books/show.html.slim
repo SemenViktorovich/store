@@ -7,5 +7,7 @@ p
 p
   = @book.date
 br
+
   =' link_to "Delete", book_path(@book), class: 'btn btn-danger', method: :delete
   =' link_to "Edit", edit_book_path(@book), class: 'btn btn-primary'
+  =' link_to "Back", :back
