@@ -27,13 +27,14 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 #
+gem 'jquery-rails'
 gem 'slim'
 gem 'devise'
+gem 'bootstrap', '~> 5.1.3'
 
 # gem 'bootstrap-sass', '~> 3.4.1'
-gem 'bootstrap', '~> 5.1.3'
+# gem 'bootstrap-sass'
 #
-gem 'jquery-rails'
 
 
 #

@@ -4,6 +4,7 @@ class BooksController < ApplicationController
 	before_action :set_book, only: %i[ edit update destroy show ]
 
 
+
 	def index
 		@books= Book.all
 	end
@@ -41,6 +42,8 @@ class BooksController < ApplicationController
 	  flash[:success] = 'success'
 	  redirect_to books_path
 	end
+
+
 
 
 	private

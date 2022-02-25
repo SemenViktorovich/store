@@ -1,8 +1,19 @@
-li = link_to 'Books', root_path, class: 'btn btn-warning '
-li = link_to 'New book', new_book_path, class: 'btn btn-warning'
-- if user_signed_in?
-  li = link_to 'Out', destroy_user_session_path, method: :delete, class: 'btn btn-info'
-  li = link_to 'Edit account', edit_user_registration_path, class: 'btn btn-info'
-- else
-  li = link_to 'Log in', new_user_session_path, class: "btn btn-info"
-  li = link_to 'Sign up',  new_user_registration_path, class: "btn btn-info"
+nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd;"
+  a.navbar-brand href="#"
+  button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
+    span.navbar-toggler-icon
+  #navbarSupportedContent.collapse.navbar-collapse
+    ul.navbar-nav.mr-auto
+      li.nav-item.active
+        li = link_to 'Books', root_path, class: 'btn btn-warning '
+      li.nav-item
+        li = link_to 'New book', new_book_path, class: 'btn btn-warning'
+  - if user_signed_in?
+    = current_user.full_name
+    = link_to 'Out', destroy_user_session_path, method: :delete, class: 'btn btn-info mr-3 '
+    = link_to 'Edit account', edit_user_registration_path, class: 'btn btn-info mr-3'
+  - else
+    li = link_to 'Log in', new_user_session_path, class: 'btn btn-info'
+    li = link_to 'Sign up', new_user_registration_path, class: 'btn btn-info'
+
+
