@@ -30,7 +30,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'slim'
 gem 'devise'
-gem 'bootstrap', '~> 5.1.3'
+gem 'bootstrap', '~> 4.6.1'
+gem 'draper', '~> 4.0'
+
+gem 'gravatar_image_tag', '~> 1.2'
 
 # gem 'bootstrap-sass', '~> 3.4.1'
 # gem 'bootstrap-sass'

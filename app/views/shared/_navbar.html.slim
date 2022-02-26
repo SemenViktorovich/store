@@ -5,15 +5,21 @@ nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd;"
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
-        li = link_to 'Books', root_path, class: 'btn btn-warning '
+        = link_to 'Books', root_path, class: 'btn btn-warning '
       li.nav-item
-        li = link_to 'New book', new_book_path, class: 'btn btn-warning'
+        = link_to 'New book', new_book_path, class: 'btn btn-warning'
   - if user_signed_in?
-    = current_user.full_name
-    = link_to 'Out', destroy_user_session_path, method: :delete, class: 'btn btn-info mr-3 '
-    = link_to 'Edit account', edit_user_registration_path, class: 'btn btn-info mr-3'
+    = image_tag current_user.avatar, class: 'rounded-circle  nav-link', :size => "100x80"
+    .dropdown
+      button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
+        = current_user.full_name
+      .dropdown-menu aria-labelledby="dropdownMenuButton"
+        li.nav-item.active
+          = link_to 'Out', destroy_user_session_path, method: :delete, class: 'nav-link'
+        li
+          hr.dropdown-divider
+        li.nav-item
+          = link_to 'Edit account', edit_user_registration_path, class: 'nav-link'
   - else
     li = link_to 'Log in', new_user_session_path, class: 'btn btn-info'
     li = link_to 'Sign up', new_user_registration_path, class: 'btn btn-info'
-
-

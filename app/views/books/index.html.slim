@@ -1,16 +1,16 @@
- h1 BooksStore
- p Welcome
+h1 BooksStore
+p Welcome
 
- -@books.each do |book|
+-@books.each do |book|
   h2 = book.name
   p = book.author
   p = book.date
-  =' link_to "Show", book_path(book), class: 'btn btn-primary'
-  =' link_to "Edit", edit_book_path(book), class: 'btn btn-primary'
   =' link_to "Delete", book_path(book), class: 'btn btn-danger', method: :delete
+  =' link_to "Edit", edit_book_path(book), class: 'btn btn-secondary'
+  =' link_to "Show", book_path(book), class: 'btn btn-primary'
 
- footer
-  br
-	|&copy @viktorych_blyat
-  br
-	= Time.now.year
+footer
+br
+  |&copy @viktorych_blyat
+br
+  = Time.now.year
