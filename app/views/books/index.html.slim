@@ -3,6 +3,8 @@ p Welcome
 
 -@books.each do |book|
   h2 = book.name
+  - if book.image?
+    = image_tag book.image.url(:thumb), class: 'image-thumbnail thumb'
   p = book.author
   p = book.date
   =' link_to "Delete", book_path(book), class: 'btn btn-danger', method: :delete

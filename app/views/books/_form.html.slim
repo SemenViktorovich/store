@@ -1,19 +1,23 @@
-= form_with model: @book do |f|
+= form_with model: @book, html: {multipart: true} do |f|
   .mb-3.row.mr-3
     .col-sm-2.col-form-label
       = f.label :name
     .col-sm-10
       = f.text_field :name, class: 'form-control'
-
   .mb-3.row.mr-3
     .col-sm-2.col-form-label
       = f.label :author
     .col-sm-10
       = f.text_field :author, class: 'form-control'
-
   .mb-3.row.mr-3
     .col-sm-2.col-form-label
       = f.label :date
     .col-sm-10
       = f.text_field :date, class: 'form-control'
+  .mb-3.row.mr-3
+    .col-sm-2.col-form-label
+      = f.label :image
+    .col-sm-10
+      = f.file_field :image
+
   = f.submit 'Save', class: 'btn btn-primary'
