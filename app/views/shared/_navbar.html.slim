@@ -12,7 +12,7 @@ nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd;"
     = image_tag current_user.avatar, class: 'rounded-circle  nav-link', :size => "100x80"
     .dropdown
       button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
-        = current_user.full_name
+        = current_user.decorate.validate_full_name(current_user)
       .dropdown-menu aria-labelledby="dropdownMenuButton"
         li.nav-item.active
           = link_to 'Out', destroy_user_session_path, method: :delete, class: 'nav-link'
@@ -21,5 +21,7 @@ nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd;"
         li.nav-item
           = link_to 'Edit account', edit_user_registration_path, class: 'nav-link'
   - else
-    li = link_to 'Log in', new_user_session_path, class: 'btn btn-info'
-    li = link_to 'Sign up', new_user_registration_path, class: 'btn btn-info'
+    = link_to 'Log in', new_user_session_path, class: 'btn btn-info'
+    = link_to 'Sign up', new_user_registration_path, class: 'btn btn-info'
+
+
