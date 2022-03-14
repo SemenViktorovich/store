@@ -19,5 +19,5 @@
       = f.label :image
     .col-sm-10
       = f.file_field :image
-
   = f.submit 'Save', class: 'btn btn-primary'
+= image_tag(@book.image_url) if @book.image?
