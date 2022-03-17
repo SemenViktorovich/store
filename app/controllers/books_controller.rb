@@ -14,8 +14,9 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new book_params
-    if @book.save
+    book = Book.new
+    result = Books::Save.call(params: book_params, book: book)
+    if result.success?
       redirect_to books_path
     else
       render :new

@@ -7,10 +7,9 @@ p Welcome
     = image_tag book.image.url(:thumb), class: 'image-thumbnail thumb'
   p = book.author
   p = book.date
-  =' link_to "Delete", book_path(book), class: 'btn btn-danger', method: :delete
+  button.btn.btn-danger.delete_action.mr-1 data="#{book.id}" type="button"   Delete
   =' link_to "Edit", edit_book_path(book), class: 'btn btn-secondary'
   =' link_to "Show", book_path(book), class: 'btn btn-primary'
-  button.btn.btn-primary.delete_action data="#{book.id}" type="button"   Delete Image
 
 footer
 br

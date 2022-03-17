@@ -36,6 +36,7 @@ gem 'slim'
 gem 'gravatar_image_tag', '~> 1.2'
 
 gem 'carrierwave', '~> 2.0'
+gem 'interactor', '~> 3.0'
 
 
 # gem 'bootstrap-sass', '~> 3.4.1'
