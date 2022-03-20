@@ -37,6 +37,8 @@ gem 'gravatar_image_tag', '~> 1.2'
 
 gem 'carrierwave', '~> 2.0'
 gem 'interactor', '~> 3.0'
+gem "reform", ">= 2.2.0"
+gem "reform-rails"
 
 
 # gem 'bootstrap-sass', '~> 3.4.1'

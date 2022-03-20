@@ -1,3 +1,4 @@
 h1 Edit book
 
 = render 'form', books: @book
+= image_tag(@book.image_url) if @book.image?
