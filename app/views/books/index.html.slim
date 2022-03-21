@@ -2,14 +2,16 @@ h1 BooksStore
 p Welcome
 
 -@books.each do |book|
-  h2 = book.name
-  - if book.image?
-    = image_tag book.image.url(:thumb), class: 'image-thumbnail thumb'
-  p = book.author
-  p = book.date
-  button.btn.btn-danger.delete_action.mr-1 data="#{book.id}" type="button"   Delete
-  =' link_to "Edit", edit_book_path(book), class: 'btn btn-secondary'
-  =' link_to "Show", book_path(book), class: 'btn btn-primary'
+  .card.mb-3.mw-100
+    h2.card-header = book.name
+    .card-body
+      - if book.image?
+        = image_tag book.image.url(:thumb), class: 'image-thumbnail thumb'
+      p = book.author
+      p = book.date
+      button.btn.btn-danger.delete_action.mr-1 data="#{book.id}" type="button"   Delete
+      = link_to "Edit", edit_book_path(book), class: 'btn btn-secondary'
+      = link_to "Show", book_path(book), class: 'btn btn-primary'
 
 footer
 br

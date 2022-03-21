@@ -8,8 +8,7 @@ module Books
     delegate :params, to: :context
 
     def call
-      context.fail!(form.errors.messages) unless form.validate(form_params)
-
+      context.fail!(error: form.errors.messages) unless form.validate(form_params)
       form.save do |hash|
         form.model.assign_attributes(hash)
         form.save!
