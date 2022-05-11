@@ -9,7 +9,7 @@ nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd;"
       li.nav-item
         = link_to 'New book', new_book_path, class: 'btn btn-warning'
   - if user_signed_in?
-    = image_tag current_user.avatar, class: 'rounded-circle  nav-link', :size => "100x80"
+    = image_tag user_avatar(current_user, size = "100x100"), class: 'rounded-circle  nav-link'
     .dropdown
       button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
         = current_user.decorate.validate_full_name(current_user)
