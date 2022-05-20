@@ -18,6 +18,7 @@ gem 'devise'
 gem 'draper', '~> 4.0'
 gem 'jquery-rails'
 gem 'slim'
+gem 'rubocop-rails'
 
 gem 'gravatar_image_tag', '~> 1.2'
 gem 'carrierwave', '~> 2.0'
