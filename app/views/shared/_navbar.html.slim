@@ -1,17 +1,17 @@
-nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd;"
+nav.navbar.navbar-expand-lg.navbar-light style="background: linear-gradient(to right, #000000 0%, #696969 100%);"
   a.navbar-brand href="#"
   button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.active
-        = link_to 'Books', root_path, class: 'btn btn-warning '
+        = link_to 'Books', root_path, class: 'btn btn-outline-dark '
       li.nav-item
-        = link_to 'New book', new_book_path, class: 'btn btn-warning'
+        = link_to 'New book', new_book_path, class: 'btn btn-outline-dark'
   - if user_signed_in?
-    = image_tag user_avatar(current_user, size = "100x100"), class: 'rounded-circle  nav-link'
+    = image_tag user_avatar(current_user, size = "70x70"), class: 'rounded-circle  nav-link'
     .dropdown
-      button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
+      button#dropdownMenuButton.btn.btn-outline-dark.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
         = current_user.decorate.validate_full_name(current_user)
       .dropdown-menu aria-labelledby="dropdownMenuButton"
         li.nav-item.active
@@ -21,7 +21,5 @@ nav.navbar.navbar-expand-lg.navbar-light style="background-color: #e3f2fd;"
         li.nav-item
           = link_to 'Edit account', edit_user_registration_path, class: 'nav-link'
   - else
-    = link_to 'Log in', new_user_session_path, class: 'btn btn-info'
-    = link_to 'Sign up', new_user_registration_path, class: 'btn btn-info'
-
-
+    = link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark'
+    = link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark'
