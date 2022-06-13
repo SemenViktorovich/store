@@ -357,6 +357,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.0)
+  ransack
   reform (>= 2.2.0)
   reform-rails
   rubocop-rails

@@ -18,6 +18,9 @@ gem 'bootstrap', '~> 4.6.1'
 gem 'activeadmin'
 gem 'devise'
 
+# search
+gem 'ransack'
+
 gem 'draper', '~> 4.0'
 gem 'jquery-rails'
 gem 'slim'

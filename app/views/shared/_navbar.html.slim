@@ -1,13 +1,15 @@
-nav.navbar.navbar-expand-lg.navbar-light style="background: linear-gradient(to right, #000000 0%, #696969 100%);"
+nav.navbar.navbar-expand-lg.navbar-light style="background: linear-gradient(4deg, #5462c3, #ba872c);"
   a.navbar-brand href="#"
   button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button"
     span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
-      li.nav-item.active
+      li.nav-item.mr-1
         = link_to 'Books', root_path, class: 'btn btn-outline-dark '
-      li.nav-item
+      li.nav-item.mr-1
         = link_to 'New book', new_book_path, class: 'btn btn-outline-dark'
+      = render 'search'
+            / input.form-control.mr-2 type="search" placeholder="Search" aria-label="Search"
   - if user_signed_in?
     = image_tag user_avatar(current_user, size = "70x70"), class: 'rounded-circle  nav-link'
     .dropdown

@@ -1,0 +1,8 @@
+form.d-flex
+  = search_form_for @q do |f|
+    = f.search_field :name_or_author_cont, :size=>"10" , class: 'form-control', placeholder: 'Название книги'
+    = f.select :date_gteq, options_for_select(Book.all.map(&:date)),
+            { include_blank: 'С..' }, class: "form-control ml-1"
+    = f.select :date_lteq, options_for_select(Book.all.map(&:date)),
+            { include_blank: 'По..' }, class: "form-control ml-1"
+    button.btn.btn-outline-dark.ml-1.w-100 Search
