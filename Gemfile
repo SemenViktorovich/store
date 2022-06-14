@@ -13,6 +13,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.6.1'
+gem 'i18n'
 
 # admin panel
 gem 'activeadmin'

@@ -1,0 +1,36 @@
+ru:
+  books:
+    index:
+      title:  'Добро пожаловать в BookStore'
+      delete: 'Удалить'
+      edit: 'Изменить'
+      show: 'Показать'
+    search:
+      search: 'Поиск'
+      plac: 'Название книги'
+    form:
+      save: 'Сохранить'
+    show:
+      back: 'Назад'
+      text: 'Коментарии'
+      comment: 'Коментарий'
+  shared:
+    navbar:
+      book: 'Книги'
+      new:  'Новая книга'
+      out:  'Выход'
+      edit: 'Изменить аккаунт'
+      login: 'Войти'
+      reg: 'Регистрация'
+  activerecord:
+    models:
+      book: 'Книга'
+      comment: 'Коментарий'
+    attributes:
+      comment:
+        body:
+      book:
+        name: 'Имя'
+        date: 'Дата'
+        author: 'Автор'
+        images: 'Фото'

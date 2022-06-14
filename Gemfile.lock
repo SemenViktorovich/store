@@ -349,6 +349,7 @@ DEPENDENCIES
   devise
   draper (~> 4.0)
   gravatar_image_tag (~> 1.2)
+  i18n
   interactor (~> 3.0)
   jbuilder (~> 2.5)
   jquery-rails

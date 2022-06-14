@@ -5,11 +5,21 @@ nav.navbar.navbar-expand-lg.navbar-light style="background: linear-gradient(4deg
   #navbarSupportedContent.collapse.navbar-collapse
     ul.navbar-nav.mr-auto
       li.nav-item.mr-1
-        = link_to 'Books', root_path, class: 'btn btn-outline-dark '
+        = link_to t('.book'), root_path, class: 'btn btn-outline-dark '
       li.nav-item.mr-1
-        = link_to 'New book', new_book_path, class: 'btn btn-outline-dark'
+        = link_to t('.new'), new_book_path, class: 'btn btn-outline-dark'
       = render 'search'
-            / input.form-control.mr-2 type="search" placeholder="Search" aria-label="Search"
+    ul.nav.col-12.col-lg-auto.mb-2.mb-md-0
+      .dropdown
+        button.btn.btn-outline-dark.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" type="button"
+          = t I18n.locale
+        .dropdown-menu
+          -I18n.available_locales.each do |locale|
+            -if I18n.locale == locale
+              = tag.span locale, class: 'dropdown-item'
+            -else
+              = link_to locale, root_path(locale: locale),
+                class: 'dropdown-item'
   - if user_signed_in?
     = image_tag user_avatar(current_user, size = "70x70"), class: 'rounded-circle  nav-link'
     .dropdown
@@ -17,11 +27,11 @@ nav.navbar.navbar-expand-lg.navbar-light style="background: linear-gradient(4deg
         = current_user.decorate.validate_full_name(current_user)
       .dropdown-menu aria-labelledby="dropdownMenuButton"
         li.nav-item.active
-          = link_to 'Out', destroy_user_session_path, method: :delete, class: 'nav-link'
+          = link_to t('.out'), destroy_user_session_path, method: :delete, class: 'nav-link'
         li
           hr.dropdown-divider
         li.nav-item
-          = link_to 'Edit account', edit_user_registration_path, class: 'nav-link'
+          = link_to t('.edit'), edit_user_registration_path, class: 'nav-link'
   - else
-    = link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark'
-    = link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark'
+    = link_to t('.login'), new_user_session_path, class: 'btn btn-outline-dark'
+    = link_to t('.reg'), new_user_registration_path, class: 'btn btn-outline-dark'

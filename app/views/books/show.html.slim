@@ -9,17 +9,17 @@
   p
     = @book.date
   br
-    = link_to "Delete", book_path(@book), class: 'btn btn-danger', method: :delete
-    = link_to "Edit", edit_book_path(@book), class: 'btn btn-secondary'
-    = link_to "Back", :back, class: 'btn btn-primary'
-p.text-xl-center Comments
+    = link_to t('books.index.delete'), book_path(@book), class: 'btn btn-danger', method: :delete
+    = link_to t('books.index.edit'), edit_book_path(@book), class: 'btn btn-secondary'
+    = link_to t('.back'), :back, class: 'btn btn-primary'
+p.text-xl-center =t('.text')
 -@book.comments.each do |comment|
   .alert.alert-light
     = "#{User.find(comment.user_id).first_name}:"
     .alert
       = comment.body
-    = link_to "deleteaj", book_comment_path(@book, comment.id), method: :delete, class: 'btn btn-warning'
-    button.btn.btn-danger.delete_comment data="#{@book.id}" data_comment="#{comment.id}" type="button" DeleteAjax
+    = link_to t('books.index.delete'), book_comment_path(@book, comment.id), method: :delete, class: 'btn btn-warning'
+    button.btn.btn-danger.delete_comment data="#{@book.id}" data_comment="#{comment.id}" type="button" =t('books.index.delete')
 .card-body.card-header
   = form_for( [@book, @book.comments.build] ) do |f|
     .mb-3.row.mr-3
@@ -29,4 +29,4 @@ p.text-xl-center Comments
     .mb-3.row.mr-3
       .col-sm-2.col-form-label
         = f.label current_user.decorate.validate_full_name(current_user), class: 'col-sm-2 col-form-label'
-    = f.submit 'Comment', class: 'btn btn-primary ml-2'
+    = f.submit t('.comment'), class: 'btn btn-primary ml-2'
