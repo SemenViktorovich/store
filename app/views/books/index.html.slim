@@ -1,17 +1,18 @@
 h1 = t('.title')
-
--@books.each do |book|
-  .card.mb-3
-    h2.card-header = book.name
-    .card-body
-      - if book.image?
-        = image_tag book.image.url(:thumb), class: 'image-thumbnail thumb'
-      p = book.author
-      p = book.date
-      button.btn.btn-danger.delete_action.mr-1 data="#{book.id}" type="button" =t('.delete')
-      = link_to t('.edit'), edit_book_path(book), class: 'btn btn-secondary'
-      = link_to t('.show'), book_path(book), class: 'btn btn-primary'
-
+.ml-3.mr-3
+  = (pagy_bootstrap_nav @pagy).html_safe
+  -@books.each do |book|
+    .card.mb-3
+      h2.card-header = book.name
+      .card-body
+        - if book.image?
+          = image_tag book.image.url(:thumb), class: 'image-thumbnail thumb'
+        p = book.author
+        p = book.date
+        button.btn.btn-danger.delete_action.mr-1 data="#{book.id}" type="button" =t('.delete')
+        = link_to t('.edit'), edit_book_path(book), class: 'btn btn-secondary'
+        = link_to t('.show'), book_path(book), class: 'btn btn-primary'
+  = (pagy_bootstrap_nav @pagy).html_safe
 footer
 br
   = Time.now.year

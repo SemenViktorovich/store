@@ -13,7 +13,7 @@ ru:
     show:
       back: 'Назад'
       text: 'Коментарии'
-      comment: 'Коментарий'
+      comment: 'Отправить комментарий'
   shared:
     navbar:
       book: 'Книги'
@@ -28,9 +28,9 @@ ru:
       comment: 'Коментарий'
     attributes:
       comment:
-        body:
+        body: 'Текст комментария'
       book:
         name: 'Имя'
         date: 'Дата'
         author: 'Автор'
-        images: 'Фото'
+        image: 'Фото'

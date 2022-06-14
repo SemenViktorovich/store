@@ -14,7 +14,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.6.1'
 gem 'i18n'
-
+gem 'pagy', '~> 5.10'
 # admin panel
 gem 'activeadmin'
 gem 'devise'

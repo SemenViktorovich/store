@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   before_action :set_search, only: %i[index edit update show new]
 
   def index
-    @books = @q.result
+    @pagy, @books = pagy(@q.result, items: 5)
   end
 
   def new

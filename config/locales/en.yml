@@ -28,9 +28,9 @@ en:
       comment: 'Comments'
     attributes:
       comment:
-        body:
+        body: 'Body'
       book:
         name: 'Name'
         date: 'Date'
         author: 'Author'
-        images: 'Images'
+        image: 'Images'
