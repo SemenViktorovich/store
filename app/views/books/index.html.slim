@@ -1,5 +1,6 @@
 h1 = t('.title')
-.ml-3.mr-3
+= render 'books/search'
+.ml-3.mr-3.mt-3
   = (pagy_bootstrap_nav @pagy).html_safe
   -@books.each do |book|
     .card.mb-3
