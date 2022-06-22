@@ -2,6 +2,7 @@ en:
   books:
     index:
       title: 'Welcome to BookStore'
+      random_book: 'Random book'
       delete: 'Delete'
       edit: 'Edit'
       show: 'Show'

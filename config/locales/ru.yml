@@ -2,6 +2,7 @@ ru:
   books:
     index:
       title:  'Добро пожаловать в BookStore'
+      random_book: 'Случайная книга'
       delete: 'Удалить'
       edit: 'Изменить'
       show: 'Показать'
