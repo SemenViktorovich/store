@@ -18,6 +18,7 @@ gem 'pagy', '~> 5.10'
 # admin panel
 gem 'activeadmin'
 gem 'devise'
+gem 'doorkeeper'
 
 # search
 gem 'ransack'
